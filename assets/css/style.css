@@ -1,0 +1,302 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+html, body {
+    font-family: "Lato", sans-serif;
+    background: #3e3e3e url(http://cl.ly/image/0S3B1J3v471I/tex.png);
+    height: 100%;
+    margin: 0;
+}
+#padMatrix {
+    width: 498px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+.container {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+.container .toggle {
+    display: inline-block;
+    margin: 2px;
+}
+.toggle {
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(#313131, #545454);
+    position: relative;
+    padding: 6px;
+    height: 40px;
+    width: 40px;
+}
+.toggle .button {
+    transition: box-shadow 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px 1px rgba(62, 62, 62, 0.5), 0 3px 3px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(#6c6c6c 0%, #535252 48%, #4f4f4f 52%, #2c2c2c 100%);
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+.toggle .button .indicator {
+    height: 4px;
+    width: 18px;
+    background: rgba(169, 169, 169, 0.91);
+    position: absolute;
+    bottom: 5px;
+    left: 11px;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.92), 0 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+.toggle input:checked ~ .button .indicator {
+    background: rgba(255, 0, 0, 0.85);
+}
+.toggle.light .button .indicator {
+    background: rgba(117, 255, 40, 0.85);
+}
+.toggle.light input:checked ~ .button .indicator {
+    background: rgba(203, 255, 120, 0.85);
+}
+.toggle input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    height: 46px;
+    width: 46px;
+    left: 0;
+    top: 0;
+}
+.toggle input:checked ~ .button {
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 0 rgba(74, 74, 74, 0.5);
+}
+.playerBox {
+    text-align: left;
+    width: 448px;
+    margin: 0 auto;
+    margin-bottom: 4px;
+    padding: 4px 0 4px 0;
+}
+.round {
+    border-radius: 50%;
+}
+.button {
+    text-align: center;
+}
+.button-icon {
+    text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+    display: inline-block;
+    line-height: 37px;
+    color: rgba(255, 0, 0, 0.85);
+    color: rgba(148, 148, 148, 0.85);
+}
+.toggle input:checked ~ .button .button-icon {
+    color: rgba(117, 255, 40, 0.85);
+    text-shadow: rgb(7, 110, 15) 1px 1px 0px;
+}
+/*  Actions  */
+.big:hover > [class*="fontawesome-"]::before,
+.small:hover > [class*="fontawesome-"]::before,
+.dl-tab:hover > [class*="fontawesome-"]::before {
+    color: #d4d9d7;
+}
+.big {
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background: radial-gradient(circle at 50% 5%, #777777, #161616);
+    box-shadow: 0 0.22em 0.3em -0.22em rgba(0, 0, 0, 0.7), inset 0 0.2em 0.4em -0.22em rgba(0, 0, 0, 0.9);
+    transition: all 80ms;
+}
+.big > span {
+    font-size: 2em;
+}
+.big::before {
+    position: absolute;
+    content: '';
+    width: 60%;
+    height: 60%;
+    margin: 20%;
+    border-radius: 100%;
+    background: radial-gradient(circle at 50% 92%, #4b4b4b, #282828);
+    transition: all 80ms;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+}
+.controllers_wrapper {
+    display: inline-block;
+}
+.controllers {
+    display: inline-block;
+    padding: 5px 5px 5px 15px;
+    order: 1px solid rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: inset 0 1px 1px #f4f4f4, 0 0 2px black, 0 2px 1px #424242;
+    box-shadow: 0 1px 1px #676767, 0 0 2px black, 0 2px 1px #3b3b3b;
+    width: 498px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.33);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.controllers_button {
+    position: relative;
+    display: inline-block;
+    margin-top: 4px;
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    background-size: 100%;
+    background-image: linear-gradient(#5a5858, #484747 50%, #484848 51%, #373737);
+    box-shadow: inset 0 1px 1px #cccccc, 0 0 2px black, 0 2px 1px #424242;
+    border-radius: 1px;
+}
+.controllers_button:active {
+    background-size: 100%;
+    background-image: linear-gradient(#5a5858, #484747 50%, #484848 51%, #373737);
+    box-shadow: inset 0 1px 1px #cccccc, 0 0 2px black, 0 2px 1px #424242;
+    border-radius: 1px;
+}
+.play:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -13px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 30px solid rgba(255, 255, 255, 0.3);
+}
+.play:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 30px solid rgba(0, 0, 0, 0.5);
+}
+.play:active:before {
+    margin-top: -10px;
+    margin-left: -12px;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 28px solid rgba(255, 255, 255, 0.3);
+}
+.play:active:after {
+    margin-top: -11px;
+    margin-left: -11px;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 28px solid rgba(0, 0, 0, 0.5);
+}
+.pause:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -13px;
+    border-right: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 24px solid rgba(255, 255, 255, 0.3);
+}
+.pause:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border-right: 4px solid rgba(0, 0, 0, 0.5);
+    border-left: 4px solid rgba(0, 0, 0, 0.5);
+    border-top: 24px solid rgba(0, 0, 0, 0.5);
+}
+.pause:active:before {
+    margin-top: -10px;
+    margin-left: -12px;
+    border-right: 3px solid rgba(255, 255, 255, 0.3);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 22px solid rgba(255, 255, 255, 0.3);
+}
+.pause:active:after {
+    margin-top: -11px;
+    margin-left: -11px;
+    border-right: 3px solid rgba(0, 0, 0, 0.5);
+    border-left: 3px solid rgba(0, 0, 0, 0.5);
+    border-top: 22px solid rgba(0, 0, 0, 0.5);
+}
+.pause span {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-right: 13px;
+    border-right: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 24px solid rgba(255, 255, 255, 0.3);
+}
+.pause span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -3px;
+    border-right: 4px solid rgba(0, 0, 0, 0.5);
+    border-left: 4px solid rgba(0, 0, 0, 0.5);
+    border-top: 24px solid rgba(0, 0, 0, 0.5);
+}
+.pause:active span {
+    margin-top: -10px;
+    margin-right: 12px;
+    border-right: 3px solid rgba(255, 255, 255, 0.3);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 22px solid rgba(255, 255, 255, 0.3);
+}
+.pause:active span:after {
+    margin-top: -23px;
+    margin-left: -2px;
+    border-right: 3px solid rgba(0, 0, 0, 0.5);
+    border-left: 3px solid rgba(0, 0, 0, 0.5);
+    border-top: 22px solid rgba(0, 0, 0, 0.5);
+}
+.stop:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -13px;
+    border: 12px solid rgba(255, 255, 255, 0.3);
+}
+.stop:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border: 12px solid rgba(0, 0, 0, 0.5);
+}
+.stop:active:before {
+    margin-top: -10px;
+    margin-left: -12px;
+    border: 11px solid rgba(255, 255, 255, 0.3);
+}
+.stop:active:after {
+    margin-top: -11px;
+    margin-left: -11px;
+    border: 11px solid rgba(0, 0, 0, 0.5);
+}
+.container_big {
+    display: flex;
+    justify-content: space-between;
+}

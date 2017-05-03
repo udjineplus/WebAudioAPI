@@ -117,17 +117,20 @@ var stopLoopBtn = document.getElementById('stopLoopBtn');
 var pauseLoopBtn = document.getElementById('pauseLoopBtn');
 var isPlayLoop = false;
 var onPlayLoopBtnClickHandler = function(event) {
+    if(isPlayLoop) return;
     isPlayLoop = true;
     drumBox.playLoop(60000/180);
 }
 
 var onStopLoopBtnClickHandler = function(event) {
+    if(!isPlayLoop) return;
     isPlayLoop = false;
     drumBox.stopLoop();
     drumBox.resetStepPad();
 }
 
 var onPauseLoopBtnClickHandler = function(event) {
+    if(!isPlayLoop) return;
     isPlayLoop = false;
     drumBox.stopLoop();
 }
